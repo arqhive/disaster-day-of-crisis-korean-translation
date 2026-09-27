@@ -1,0 +1,2095 @@
+[
+ {
+  "name": "tutorial_agu01_aaa",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_aaa.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_camera2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_camera2.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_dash_bst",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_dash_bst.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_dash_bst_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_dash_bst.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_eatset",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_eatset.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_eatset_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_eatset.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_fire_digestion",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_fire_digestion.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_fire_digestion_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_fire_digestion.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_gas_breath",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_gas_breath.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_gas_breath_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_gas_breath.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_gas_breath_2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_gas_breath.tpl@0#2"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_itemset",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_itemset.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_itemset_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_itemset.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_itemset_2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_itemset.tpl@0#2"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_itemset_3",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_itemset.tpl@0#3"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_jump",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_jump.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_life_sta_mov",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_life_sta_mov.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_life_sta_mov_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_life_sta_mov.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_life_sta_mov_2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_life_sta_mov.tpl@0#2"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_life_sta_mov_3",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_life_sta_mov.tpl@0#3"
+  ]
+ },
+ {
+  "name": "tutorial_agu01_obj",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_agu01_obj.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_air02_para2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_air02_para2.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_air02_para2_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_air02_para2.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_03obj",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_03obj.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_bp",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_bp.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_bullet",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_bullet.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_hide",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_hide.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_ico_typ",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_ico_typ.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_ico_typ_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_ico_typ.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_key",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_key.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_reload",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_reload.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_shoot",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_shoot.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_battle_shoot_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_battle_shoot.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_dangerobj",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_dangerobj.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_hine",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_hine.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_rescue",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_rescue.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_rescue2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_rescue2.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_rescue2_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_rescue2.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_rescue3",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_rescue3.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu02_staminas",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu02_staminas.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu03_05zoom",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu03_05zoom.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu03_07special",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu03_07special.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu04_car",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu04_car.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu04_car_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu04_car.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_blu04_car_2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu04_car.tpl@0#2"
+  ]
+ },
+ {
+  "name": "tutorial_blu05_aaa2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu05_aaa2.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu05_battle_change",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu05_battle_change.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu05_battle_dmg",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu05_battle_dmg.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu05_item01",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu05_item01.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu05_rescue4",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu05_rescue4.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu05_rescue5",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu05_rescue5.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu05_rescue_call",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu05_rescue_call.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu06_heri",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu06_heri.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu07_fire",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu07_fire.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu08_fire",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu08_fire.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu09_motal",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu09_motal.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu09_motal_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu09_motal.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_blu09_rescue7",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu09_rescue7.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu10_hot",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu10_hot.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu11_car01",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu11_car01.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu12_breath",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu12_breath.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_blu12_massage",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_blu12_massage.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_int01_body",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_body.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_int01_buy",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_buy.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_int01_buy_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_buy.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_int01_buy_2",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_buy.tpl@0#2"
+  ]
+ },
+ {
+  "name": "tutorial_int01_buy_3",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_buy.tpl@0#3"
+  ]
+ },
+ {
+  "name": "tutorial_int01_equip",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_equip.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_int01_int",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_int.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_int01_int_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_int.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_int01_reinforce",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_reinforce.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_int01_select",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_int01_select.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_por03_bofu",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_por03_bofu.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_rai01_cold",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_rai01_cold.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_rai04_Lungs_water",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_rai04_Lungs_water.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_ros04_motal",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_ros04_motal.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_ros08_breath",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_ros08_breath.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_ros08_dakko",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_ros08_dakko.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_ros09_key",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_ros09_key.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_ros10_raha",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_ros10_raha.tpl@0#0"
+  ]
+ },
+ {
+  "name": "tutorial_ros10_raha_1",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_ros10_raha.tpl@0#1"
+  ]
+ },
+ {
+  "name": "tutorial_shageki01",
+  "group": "튜토리얼",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/tutorial_shageki01.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0001",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0001.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0002",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0002.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0003",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0003.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0004",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0004.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0005",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0005.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0006",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0006.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0007",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0007.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0008",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0008.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0009",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0009.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0010",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0010.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0011",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0011.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0012",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0012.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0013",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0013.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0014",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0014.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0015",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0015.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0016",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0016.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0017",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0017.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0018",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0018.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0019",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0019.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0020",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0020.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0021",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0021.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0022",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0022.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0023",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0023.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0024",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0024.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0025",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0025.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0026",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0026.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0027",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0027.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0028",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0028.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0029",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0029.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0030",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0030.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0031",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0031.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0032",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0032.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0033",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0033.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0034",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0034.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0035",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0035.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0036",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0036.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0037",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0037.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0038",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0038.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0039",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0039.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0040",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0040.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0041",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0041.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0042",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0042.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0043",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0043.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0044",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0044.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0045",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0045.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0046",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0046.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0047",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0047.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0048",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0048.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST0049",
+  "group": "로딩힌트_ST00",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST0049.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1002",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1002.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1003",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1003.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1004",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1004.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1005",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1005.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1006",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1006.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1007",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1007.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1008",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1008.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1009",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1009.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1010",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1010.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1011",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1011.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1012",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1012.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1014",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1014.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1015",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1015.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1016",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1016.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1017",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1017.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1018",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1018.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1019",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1019.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1020",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1020.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1021",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1021.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1022",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1022.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1023",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1023.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1024",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1024.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1025",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1025.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1026",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1026.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1027",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1027.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1028",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1028.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1029",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1029.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1030",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1030.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1031",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1031.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1032",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1032.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1033",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1033.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1034",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1034.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1035",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1035.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1036",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1036.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1037",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1037.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1038",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1038.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1039",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1039.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1040",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1040.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1041",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1041.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1042",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1042.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1043",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1043.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1044",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1044.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1045",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1045.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1046",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1046.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1047",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1047.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1048",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1048.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1049",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1049.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1050",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1050.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1051",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1051.tpl@0#0"
+  ]
+ },
+ {
+  "name": "ST1053",
+  "group": "인물장소소개_ST10",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/ST1053.tpl@0#0"
+  ]
+ },
+ {
+  "name": "logo",
+  "group": "스트랩경고_logo",
+  "fmt": "CMPR",
+  "w": 641,
+  "h": 480,
+  "refs": [
+   "common/logo.tpl@0#0"
+  ]
+ },
+ {
+  "name": "logo_1",
+  "group": "스트랩경고_logo",
+  "fmt": "CMPR",
+  "w": 641,
+  "h": 480,
+  "refs": [
+   "common/logo.tpl@0#1"
+  ]
+ },
+ {
+  "name": "logo_2",
+  "group": "스트랩경고_logo",
+  "fmt": "CMPR",
+  "w": 641,
+  "h": 480,
+  "refs": [
+   "common/logo.tpl@0#2"
+  ]
+ },
+ {
+  "name": "blu02_01_10262f",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 256,
+  "h": 32,
+  "refs": [
+   "map/blu02_01.epz@2c0#5"
+  ]
+ },
+ {
+  "name": "blu04_00_67c003",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 256,
+  "h": 32,
+  "refs": [
+   "map/blu04_00.epz@e0#3"
+  ]
+ },
+ {
+  "name": "blu05_01_3c81d7",
+  "group": "스테이지제목_경고띠",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "map/blu05_01.epz@2e0#0"
+  ]
+ },
+ {
+  "name": "blu11_00_2bc527",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 256,
+  "h": 32,
+  "refs": [
+   "map/blu11_00.epz@400#3",
+   "map/por01_00.epz@180#3"
+  ]
+ },
+ {
+  "name": "blu11_02_8981b8",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 256,
+  "h": 32,
+  "refs": [
+   "map/blu11_02.epz@205e0#5"
+  ]
+ },
+ {
+  "name": "por01_00_21f0c7",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 256,
+  "h": 32,
+  "refs": [
+   "map/por01_00.epz@3b4a0#5"
+  ]
+ },
+ {
+  "name": "rai01_00_4e5a95",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 256,
+  "h": 32,
+  "refs": [
+   "map/rai01_00.epz@c5e0#5"
+  ]
+ },
+ {
+  "name": "ros02_00_585f1f",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 256,
+  "h": 32,
+  "refs": [
+   "map/ros02_00.epz@23820#3"
+  ]
+ },
+ {
+  "name": "ros02_00_c2ec4e",
+  "group": "스테이지제목_경고띠",
+  "fmt": "CMPR",
+  "w": 512,
+  "h": 128,
+  "refs": [
+   "map/ros02_00.epz@7e640#1",
+   "map/ros10_00.epz@1aeba0#1"
+  ]
+ },
+ {
+  "name": "ros02_00_0e49c2",
+  "group": "스테이지제목_경고띠",
+  "fmt": "CMPR",
+  "w": 256,
+  "h": 64,
+  "refs": [
+   "map/ros02_00.epz@7e640#2",
+   "map/ros10_00.epz@1aeba0#2"
+  ]
+ },
+ {
+  "name": "ros02_00_fb9577",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 128,
+  "h": 64,
+  "refs": [
+   "map/ros02_00.epz@7e640#3"
+  ]
+ },
+ {
+  "name": "ros03_00_cda924",
+  "group": "스테이지제목_경고띠",
+  "fmt": "RGB5A3",
+  "w": 256,
+  "h": 32,
+  "refs": [
+   "map/ros03_00.epz@9640#5"
+  ]
+ },
+ {
+  "name": "rai04_00_d8f071",
+  "group": "스테이지제목_경고띠",
+  "fmt": "CMPR",
+  "w": 128,
+  "h": 64,
+  "refs": [
+   "map/rai04_00.rec@40#113"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_8df74f",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 136,
+  "h": 40,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@58000#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_db0285",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 240,
+  "h": 64,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@58ae0#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_c3885a",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 240,
+  "h": 64,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@5a920#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_eb0c48",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 424,
+  "h": 32,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@5c760#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_46f60e",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 424,
+  "h": 32,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@5e220#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_361ab3",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 200,
+  "h": 32,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@5fce0#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_0cec1e",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 200,
+  "h": 32,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@609a0#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_ccdd7b",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 320,
+  "h": 64,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@636e0#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_405948",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 112,
+  "h": 64,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@65f20#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_9e286b",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 112,
+  "h": 64,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@66d60#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_b024b9",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 112,
+  "h": 64,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@67ba0#0"
+  ]
+ },
+ {
+  "name": "homebutton2_JPN_c479d7",
+  "group": "홈버튼메뉴",
+  "fmt": "I4",
+  "w": 368,
+  "h": 40,
+  "refs": [
+   "common/hb/homebutton2_JPN.bin@693e0#0"
+  ]
+ }
+]
