@@ -92,7 +92,7 @@ powershell -ExecutionPolicy Bypass -File patch.ps1 "원본.iso" "결과.wbfs"
 ### 빌드
 
 ```bash
-# 배포용 패처: 빌드한 뒤 파일별 차분을 만들어 release/Disaster_KO_v0.1/ 과 .zip 으로 묶음
+# 배포용 패처: 빌드한 뒤 파일별 차분을 만들어 release/RDZJ_KPatch_v0.1/ 과 .zip 으로 묶음
 python tools/make_patcher.py 0.1
 
 # 시험용 한글 ISO만 빨리 만들기 (work/Disaster_KO.iso)

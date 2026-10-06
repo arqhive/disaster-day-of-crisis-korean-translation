@@ -2,7 +2,7 @@
 ISO 통째 차분과 달리 원본 덤프 형태(정본 ISO, WBFS, WBFS에서 변환한 ISO 등)와 상관없이 적용된다.
 사용자용 패처(patcher/패치하기.bat, patch.ps1)와 wit·xdelta3 를 함께 묶는다 (disc-file-patcher 방식).
 사용: python tools/make_patcher.py 0.1
-결과: release/Disaster_KO_v{버전}/ 과 같은 이름의 .zip"""
+결과: release/RDZJ_KPatch_v{버전}/ 과 같은 이름의 .zip ([게임 코드]_KPatch_[버전] 규칙)"""
 import hashlib, os, shutil, subprocess, sys, zipfile
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import paths
@@ -36,7 +36,7 @@ def main():
     sys.stdout.reconfigure(encoding='utf-8')
     if len(sys.argv) < 2:
         raise SystemExit('사용법: python tools/make_patcher.py <버전>')
-    name = f'Disaster_KO_v{sys.argv[1]}'
+    name = f'{GAME_ID[:4]}_KPatch_v{sys.argv[1]}'   # 릴리즈 첨부 이름 규칙: [게임 코드]_KPatch_[버전]
     out = os.path.join(paths.RELEASE, name)
     import build
     build.main()
