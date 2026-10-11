@@ -3,7 +3,7 @@
 *Disaster: Day of Crisis* (Wii, 일본판 `RDZJ01`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
 
-**제작: arqhive** · **최신 버전: [v0.2](../../releases/tag/v0.2)**
+**제작: arqhive** · **최신 버전: [v0.3](../../releases/tag/v0.3)**
 
 - 대사 전체를 한글화했습니다(스테이지 대사, 무전·라디오 방송, 조작 안내, 컷신 자막 65편).
 - 메뉴와 게임 안 데이터를 한글화했습니다(타이틀·설정·일시정지 메뉴, 세이브 메시지, 재해 파일, 무기·아이템 설명, 칭호, 레스큐 목록, 구매 확인 메뉴, 디스크 오류 안내).
@@ -37,7 +37,7 @@
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `RDZJ_KPatch_v0.2.zip`을 받아 압축을 풉니다.
+1. [배포 페이지](../../releases/latest)에서 `RDZJ_KPatch_v0.3.zip`을 받아 압축을 풉니다.
 2. 원본 이미지(ISO 또는 WBFS)를 `패치하기.bat` 위에 끌어다 놓습니다.
    - 원본을 `패치하기.bat`과 같은 폴더에 넣고 더블클릭해도 됩니다.
    - 폴더에 이미지가 여러 개 있으면 경로를 물어봅니다. 파일을 창에 끌어다 놓고 Enter를 누르세요.
@@ -94,15 +94,15 @@ powershell -ExecutionPolicy Bypass -File patch.ps1 "원본.iso" "결과.wbfs"
 ### 빌드
 
 ```bash
-# 배포용 패처: 빌드한 뒤 파일별 차분을 만들어 release/RDZJ_KPatch_v0.2/ 과 .zip 으로 묶음
-python tools/make_patcher.py 0.2
+# 배포용 패처: 빌드한 뒤 파일별 차분을 만들어 release/RDZJ_KPatch_v0.3/ 과 .zip 으로 묶음
+python tools/make_patcher.py 0.3
 
 # 시험용 한글 ISO만 빨리 만들기 (work/Disaster_KO.iso)
 python tools/build.py
 python tools/inplace.py
 ```
 
-처음 실행하면 일본판 ISO의 데이터 파티션을 `work/extract`에 추출합니다. `build.py`는 번역을 검사한 뒤 바뀐 파일 323개를 `work/out`에 만듭니다(그림 인코딩 때문에 15분 안팎 걸립니다). `make_patcher.py`는 이 파일들의 차분과 `patcher/`의 사용자용 스크립트를 묶고, `inplace.py`는 원본 ISO의 배치를 그대로 두고 이 파일들만 교체한 시험용 ISO를 만듭니다.
+처음 실행하면 일본판 ISO의 데이터 파티션을 `work/extract`에 추출합니다. `build.py`는 번역을 검사한 뒤 바뀐 파일 323개를 `work/out`에 만듭니다(처음에는 그림 인코딩 때문에 15분 안팎 걸리고, 이후에는 `work/cache`에 둔 결과를 다시 써서 바뀐 그림만 인코딩합니다). `make_patcher.py`는 이 파일들의 차분과 `patcher/`의 사용자용 스크립트를 묶고, `inplace.py`는 원본 ISO의 배치를 그대로 두고 이 파일들만 교체한 시험용 ISO를 만듭니다.
 같은 입력이면 결과는 바이트 단위로 같습니다. Windows Git Bash에서는 `PYTHONIOENCODING=utf-8`을 붙이세요.
 
 ### 번역 수정
