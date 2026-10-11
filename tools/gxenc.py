@@ -1,5 +1,5 @@
 """GX texture encoders: CMPR (via Pillow BC1), RGB5A3, I4."""
-import io
+import hashlib, io, os
 import numpy as np
 from PIL import Image
 
@@ -85,7 +85,26 @@ def _encode_blocks(px):
     return out_c0, out_c1, out_idx
 
 
+# 고품질 CMPR 은 장당 몇 초 걸려서 결과를 work/cache/cmpr 에 둔다.
+# 열쇠 = 이 파일 내용 + 그림 크기·픽셀 → 인코더를 고치거나 그림이 바뀌면 자동으로 다시 만든다.
+_CACHE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'work', 'cache', 'cmpr')
+_SRC = hashlib.sha1(open(__file__, 'rb').read()).hexdigest()
+
+
 def cmpr(img):
+    key = hashlib.sha1(f'{_SRC}{img.size}'.encode() + img.convert('RGBA').tobytes()).hexdigest()
+    path = os.path.join(_CACHE, key + '.bin')
+    if os.path.exists(path):
+        return open(path, 'rb').read()
+    data = _cmpr(img)
+    os.makedirs(_CACHE, exist_ok=True)
+    tmp = path + '.tmp'
+    open(tmp, 'wb').write(data)
+    os.replace(tmp, path)
+    return data
+
+
+def _cmpr(img):
     """고품질 CMPR: 블록마다 색 쌍 전부 + 끝점 다듬기(불투명 블록). 투명 픽셀이 있는 블록은 Pillow 결과를 쓴다."""
     w, h = img.size
     assert w % 8 == 0 and h % 8 == 0
