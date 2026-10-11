@@ -13,7 +13,102 @@ def _bc1_blocks(img):
     return raw[:(h // 4) * (w // 4) * 8].reshape(h // 4, w // 4, 8)
 
 
+def _expand(c):
+    """565 정수 (N,...) -> 디코더와 같은 0~255 RGB 실수"""
+    r = ((c >> 11) & 31) * 255 // 31
+    g = ((c >> 5) & 63) * 255 // 63
+    b = (c & 31) * 255 // 31
+    return np.stack([r, g, b], -1).astype(np.float32)
+
+
+def _pack565(rgb):
+    q = np.clip(np.rint(rgb * [31 / 255, 63 / 255, 31 / 255]), 0, [31, 63, 31]).astype(np.int64)
+    return (q[..., 0] << 11) | (q[..., 1] << 5) | q[..., 2]
+
+
+def _palette4(c0, c1):
+    a, b = _expand(c0), _expand(c1)
+    return np.stack([a, b, np.floor((2 * a + b) / 3), np.floor((a + 2 * b) / 3)], -2)   # (...,4,3)
+
+
+def _best_idx(px, pal, opaque_mask=None):
+    """px (N,16,3), pal (N,K,4,3) → 오차 (N,K), 인덱스 (N,K,16)"""
+    d = ((px[:, None, :, None, :] - pal[:, :, None, :, :]) ** 2).sum(-1)   # (N,K,16,4)
+    idx = d.argmin(-1)
+    err = np.take_along_axis(d, idx[..., None], -1)[..., 0].sum(-1)
+    return err, idx
+
+
+def _encode_blocks(px):
+    """불투명 4x4 블록들 px (N,16,3) → c0, c1, idx (N,16). 블록 안 색 쌍을 전부 시도하고 끝점을 다듬어 오차 최소."""
+    N = len(px)
+    q = _pack565(px)                                             # 후보 색 = 블록 픽셀 16개
+    ii, jj = np.triu_indices(16)
+    out_c0 = np.zeros(N, np.int64); out_c1 = np.zeros(N, np.int64); out_idx = np.zeros((N, 16), np.int64)
+    best_err = np.full(N, np.inf)
+    CH = 256
+    for s in range(0, N, CH):
+        p = px[s:s + CH]
+        a, b = q[s:s + CH][:, ii], q[s:s + CH][:, jj]            # (n,136)
+        c0, c1 = np.maximum(a, b), np.minimum(a, b)
+        err, idx = _best_idx(p, _palette4(c0, c1))
+        k = err.argmin(1); r = np.arange(len(p))
+        c0, c1, idx, err = c0[r, k], c1[r, k], idx[r, k], err[r, k]
+        # 다듬기: 끝점 각 채널 ±1 (565 단위)을 반복해서 시도
+        steps = []
+        for e in (0, 1):
+            for sh, m in ((11, 31), (5, 63), (0, 31)):
+                for dv in (-1, 1):
+                    steps.append((e, sh, m, dv))
+        for _ in range(4):
+            improved = False
+            for e, sh, m, dv in steps:
+                t = (c0, c1)[e]
+                ch = (t >> sh) & m
+                nch = np.clip(ch + dv, 0, m)
+                nt = (t & ~(m << sh)) | (nch << sh)
+                n0, n1 = (nt, c1) if e == 0 else (c0, nt)
+                hi, lo = np.maximum(n0, n1), np.minimum(n0, n1)
+                e2, i2 = _best_idx(p, _palette4(hi, lo)[:, None])
+                e2, i2 = e2[:, 0], i2[:, 0]
+                better = e2 < err - 1e-6
+                if better.any():
+                    improved = True
+                    c0 = np.where(better, hi, c0); c1 = np.where(better, lo, c1)
+                    err = np.where(better, e2, err); idx = np.where(better[:, None], i2, idx)
+            if not improved:
+                break
+        out_c0[s:s + CH], out_c1[s:s + CH], out_idx[s:s + CH], best_err[s:s + CH] = c0, c1, idx, err
+    # c0 == c1 이면 디코더가 3색 모드로 읽음: 인덱스 0·1 만 쓰면 같은 색이라 문제없음
+    same = out_c0 == out_c1
+    out_idx[same] = 0
+    return out_c0, out_c1, out_idx
+
+
 def cmpr(img):
+    """고품질 CMPR: 블록마다 색 쌍 전부 + 끝점 다듬기(불투명 블록). 투명 픽셀이 있는 블록은 Pillow 결과를 쓴다."""
+    w, h = img.size
+    assert w % 8 == 0 and h % 8 == 0
+    rgba = np.asarray(img.convert('RGBA'), np.float32)
+    blk = rgba.reshape(h // 4, 4, w // 4, 4, 4).transpose(0, 2, 1, 3, 4).reshape(-1, 16, 4)
+    fast = np.frombuffer(cmpr_fast(img), np.uint8).reshape(h // 8, w // 8, 2, 2, 8)
+    fast = fast.transpose(0, 2, 1, 3, 4).reshape(-1, 8).copy()   # 블록 행 순서로 되돌림
+    opaque = (blk[..., 3] >= 128).all(1)
+    if opaque.any():
+        c0, c1, idx = _encode_blocks(blk[opaque][..., :3])
+        bits = np.zeros(len(c0), np.int64)
+        for i in range(16):
+            bits |= idx[:, i] << (30 - 2 * i)
+        o = np.zeros((len(c0), 8), np.uint8)
+        o[:, 0], o[:, 1], o[:, 2], o[:, 3] = c0 >> 8, c0 & 255, c1 >> 8, c1 & 255
+        for k in range(4):
+            o[:, 4 + k] = (bits >> (24 - 8 * k)) & 255
+        fast[opaque] = o
+    b = fast.reshape(h // 8, 2, w // 8, 2, 8).transpose(0, 2, 1, 3, 4)
+    return b.tobytes()
+
+
+def cmpr_fast(img):
     w, h = img.size
     assert w % 8 == 0 and h % 8 == 0
     b = _bc1_blocks(img).copy()
