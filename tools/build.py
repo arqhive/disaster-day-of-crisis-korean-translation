@@ -1,4 +1,5 @@
-"""한글화 빌드: 번역(translation/ko.json) + 폰트 + 이미지(tools/assets) -> work/out/files/ 에 바뀐 파일만 쓴다(파티션 루트 형식).
+"""한글화 빌드: 번역(translation/ko.json, dol.json) + 폰트 + 이미지(tools/assets) -> work/out/ 에 바뀐 파일만 쓴다(파티션 루트 형식).
+실행 파일 문구(translation/dol.json)는 work/out/sys/main.dol 의 원래 자리에 덮어쓴다(자리보다 길면 멈춤).
 원본 추출본(work/extract)은 읽기만 한다. ISO 는 inplace.py 가 만든다.
 사용법: python tools/build.py"""
 import glob, json, os, re, shutil, sys, zlib
@@ -94,6 +95,24 @@ def build_text(by_ref):
                 kept.append(s)
             else:
                 pending.append((lambda v, sb=sbs[n], j=j: sb.strs.__setitem__(j, v), k))
+    # 실행 파일(main.dol) 문구: 원래 자리(다음 문자열 앞 0 까지)에 덮어쓴다
+    dol = bytearray(open(os.path.join(paths.EXTRACT, 'sys', 'main.dol'), 'rb').read())
+    for e in json.load(open(paths.DOL_KO, encoding='utf-8')):
+        off = int(e['off'], 16)
+        end = dol.index(0, off)
+        nxt = end
+        while dol[nxt] == 0:
+            nxt += 1
+        if not any(c >= 0x80 for c in dol[off:end]) or dol[off - 1] != 0:
+            raise SystemExit(f"main.dol {e['off']}: 원래 자리에 일본어 문자열이 없음")
+        if sorted(TAG.findall(e['ko'])) != sorted(TAG.findall(dol[off:end].decode('cp932'))):
+            raise SystemExit(f"main.dol {e['off']}: 태그가 원문과 다름")
+
+        def put_dol(v, off=off, nxt=nxt, e=e):
+            if len(v) > nxt - off - 1:
+                raise SystemExit(f"main.dol {e['off']}: 「{e['ko']}」 {len(v)}바이트 > 자리 {nxt - off - 1}바이트")
+            dol[off:nxt] = v + b'\0' * (nxt - off - len(v))
+        pending.append((put_dol, e['ko']))
     if len(caps) != 65 or len(sbs) != 83:
         raise SystemExit(f'자막 {len(caps)}/65, 스크립트 {len(sbs)}/83 개만 찾음 (경로 확인)')
 
@@ -112,6 +131,8 @@ def build_text(by_ref):
         capfile.save(os.path.join(paths.OUT_FILES, f'mov/jp/{n}.cap'), h, ev, tl)
     for n, sb in sbs.items():
         put(f'script/jp/{n}.sb', sb.build())
+    os.makedirs(os.path.dirname(paths.OUT_DOL), exist_ok=True)
+    open(paths.OUT_DOL, 'wb').write(bytes(dol))
     m.apply(fonts.values())
     for n, fo in fonts.items():
         put(n, bytes(fo.d))

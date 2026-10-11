@@ -1,6 +1,6 @@
 """원본 ISO 의 배치를 그대로 두고 바뀐 파일만 교체해 작은 xdelta 가 나오는 ISO 를 만든다.
 1) wit 로 원본을 배치 유지 복호화(work/dec.iso)
-2) 바뀐 파일(work/out/files)을 원래 자리에 덮어쓰기. 원래 자리보다 커진 파일은
+2) 바뀐 파일(work/out/files, sys/main.dol)을 원래 자리에 덮어쓰기. 원래 자리보다 커진 파일은
    FST 뒤 빈 공간(원본에서 쓰지 않는 앞쪽 약 300MB)으로 옮기고 FST 의 위치·크기를 고친다
 3) 바뀐 2MB 그룹의 H0/H1/H2 해시를 직접 계산해 기록
 4) wit 로 암호화(work/R.iso) — 해시는 다시 계산하지 않으므로 3)의 값이 그대로 쓰인다
@@ -35,7 +35,7 @@ def read_fst(P):
             cur.append(nm); ends.append(b)
         else:
             files['/'.join(cur + [nm])] = [i, a << 2, b]
-    return fst_off, fst, dol_end, files
+    return fst_off, fst, dol_off, dol_end, files
 
 
 def changed_files():
@@ -55,7 +55,7 @@ def main(out_iso):
     print('1) 복호화')
     paths.run_wit('copy', paths.rel(jp), paths.rel(dec), '--psel', 'WHOLE', '--enc', 'DECRYPT', '--overwrite')
     f = open(dec, 'r+b'); P = wiidisc.Part(f, POFF)
-    fst_off, fst, dol_end, files = read_fst(P)
+    fst_off, fst, dol_off, dol_end, files = read_fst(P)
     starts = sorted([fst_off] + [o for _, o, _ in files.values()])
     first_file = min(o for _, o, _ in files.values())
     cursor = -(-max(fst_off + len(fst), dol_end) // 0x8000) * 0x8000   # 빈 공간 시작 (32KB 정렬)
@@ -84,6 +84,12 @@ def main(out_iso):
             moved += 1
         struct.pack_into('>II', fst, idx * 12 + 4, off >> 2, len(d))
     P.write_data(fst_off, bytes(fst)); touch(fst_off, len(fst))
+    if os.path.exists(paths.OUT_DOL):   # 실행 파일은 크기가 같아야 제자리에 넣을 수 있다
+        d = open(paths.OUT_DOL, 'rb').read()
+        if len(d) != os.path.getsize(os.path.join(paths.EXTRACT, 'sys', 'main.dol')):
+            raise SystemExit('main.dol 크기가 원본과 다름')
+        P.write_data(dol_off, d); touch(dol_off, len(d))
+        print('   main.dol 교체')
     print(f'   파일 {len(changed_files())}개 (빈 공간으로 옮김 {moved}개, 사용 {cursor - 0:#x}/{first_file:#x})')
 
     ncl = P.data_size // CL

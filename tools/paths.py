@@ -7,12 +7,14 @@ ROOT = os.path.dirname(HERE)
 ASSETS = os.path.join(HERE, 'assets')              # 한글화 이미지 209장 (PNG)
 DATA = os.path.join(HERE, 'data')                  # textures.json: 이미지가 들어갈 위치
 KO_JSON = os.path.join(ROOT, 'translation', 'ko.json')
+DOL_KO = os.path.join(ROOT, 'translation', 'dol.json')   # 실행 파일(main.dol) 문구: 위치와 한국어
 RELEASE = os.path.join(ROOT, 'release')
 WORK = os.path.join(ROOT, 'work')                  # (git 제외) 추출본·빌드 결과
 EXTRACT = os.path.join(WORK, 'extract')            # wit 로 푼 DATA 파티션 (읽기 전용 입력)
 SRC = os.path.join(EXTRACT, 'files')
 OUT = os.path.join(WORK, 'out')                    # 빌드 결과: 파티션 루트 형식 (바뀐 파일만 files/ 아래에)
 OUT_FILES = os.path.join(OUT, 'files')
+OUT_DOL = os.path.join(OUT, 'sys', 'main.dol')
 MASTER = os.path.join(WORK, 'master.json')         # 원문 단위와 게임 안 위치 (extract_text.py)
 
 JP_ISO_NAME = 'Disaster [RDZJ01].iso'
