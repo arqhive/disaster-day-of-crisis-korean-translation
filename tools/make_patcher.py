@@ -1,7 +1,7 @@
 """배포용 패처 만들기: 빌드 → 바뀐 게임 파일마다 원본과의 xdelta 차분 → 패처 폴더·zip.
 ISO 통째 차분과 달리 원본 덤프 형태(정본 ISO, WBFS, WBFS에서 변환한 ISO 등)와 상관없이 적용된다.
 사용자용 패처(patcher/패치하기.bat, patch.ps1)와 wit·xdelta3 를 함께 묶는다 (disc-file-patcher 방식).
-사용: python tools/make_patcher.py 0.1
+사용: python tools/make_patcher.py 0.1 [--skip-build]  (--skip-build: work/out 을 그대로 씀)
 결과: release/RDZJ_KPatch_v{버전}/ 과 같은 이름의 .zip ([게임 코드]_KPatch_[버전] 규칙)"""
 import hashlib, os, shutil, subprocess, sys, zipfile
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -35,11 +35,12 @@ def changed_files():
 def main():
     sys.stdout.reconfigure(encoding='utf-8')
     if len(sys.argv) < 2:
-        raise SystemExit('사용법: python tools/make_patcher.py <버전>')
+        raise SystemExit('사용법: python tools/make_patcher.py <버전> [--skip-build]')
     name = f'{GAME_ID[:4]}_KPatch_v{sys.argv[1]}'   # 릴리즈 첨부 이름 규칙: [게임 코드]_KPatch_[버전]
     out = os.path.join(paths.RELEASE, name)
-    import build
-    build.main()
+    if '--skip-build' not in sys.argv:
+        import build
+        build.main()
 
     print('파일별 차분 만드는 중...')
     if os.path.exists(out):
@@ -49,7 +50,7 @@ def main():
     lines = []
     for i, (rel, old, new) in enumerate(sorted(changed_files())):
         patch = f'{i:03d}.xdelta'
-        subprocess.run([xd, '-e', '-f', '-9', '-S', 'djw', '-s', old, new, os.path.join(out, 'data', patch)], check=True)
+        subprocess.run([xd, '-e', '-A', '-f', '-9', '-S', 'djw', '-s', old, new, os.path.join(out, 'data', patch)], check=True)
         # 모드, 차분 파일, 경로, 원본 MD5, 결과 MD5
         lines.append('\t'.join(('raw', patch, rel, md5(open(old, 'rb').read()), md5(open(new, 'rb').read()))))
     open(os.path.join(out, 'data', 'manifest.txt'), 'w', encoding='utf-8', newline='\n').write('\n'.join(lines) + '\n')

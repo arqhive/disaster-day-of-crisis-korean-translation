@@ -97,7 +97,7 @@ Write-Host "  파일 $($lines.Count)개 적용"
 # 5. 다시 묶기
 Write-Host '[3/3] 이미지 만드는 중... (몇 분 걸립니다)'
 if (Test-Path -LiteralPath $Out) { Remove-Item -LiteralPath $Out -Force }
-Run $wit @('copy', $work, $Out, $fmt, '-q')
+Run $wit @('copy', $work, $Out, $fmt, '--region=file', '-q')   # 없으면 연령 등급(disc/region.bin)이 0으로 바뀜
 Cleanup
 Write-Host ''
 Write-Host "완료: $Out" -ForegroundColor Green
