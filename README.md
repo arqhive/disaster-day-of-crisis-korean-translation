@@ -3,11 +3,12 @@
 *Disaster: Day of Crisis* (Wii, 일본판 `RDZJ01`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
 
-**제작: arqhive** · **최신 버전: [v0.3](../../releases/tag/v0.3)**
+**제작: arqhive** · **최신 버전: [v0.4](../../releases/tag/v0.4)**
 
 - 대사 전체를 한글화했습니다(스테이지 대사, 무전·라디오 방송, 조작 안내, 컷신 자막 65편).
 - 메뉴와 게임 안 데이터를 한글화했습니다(타이틀·설정·일시정지 메뉴, 세이브 메시지, 재해 파일, 무기·아이템 설명, 칭호, 레스큐 목록, 구매 확인 메뉴, 디스크 오류 안내).
 - 글씨가 그려진 이미지 209장을 한글화했습니다(튜토리얼, 인물·장소 소개, 로딩 힌트, 스테이지 제목, 홈 버튼, 스트랩 경고). 16:9(와이드) 화면에서 글자 비율이 맞도록 그렸습니다.
+- 오프닝 영상에 들어간 일본어 자막 9줄을 지우고 한글 자막을 넣었습니다.
 - 게임 폰트의 한자 자리에 한글 957자를 새로 그려 넣었습니다.
 - **바뀐 게임 파일에만 차분을 적용하는 패처로 배포합니다. ISO, WBFS 등 덤프 형태와 상관없이 적용됩니다.**
 
@@ -37,7 +38,7 @@
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `RDZJ_KPatch_v0.3.zip`을 받아 압축을 풉니다.
+1. [배포 페이지](../../releases/latest)에서 `RDZJ_KPatch_v0.4.zip`을 받아 압축을 풉니다.
 2. 원본 이미지(ISO 또는 WBFS)를 `패치하기.bat` 위에 끌어다 놓습니다.
    - 원본을 `패치하기.bat`과 같은 폴더에 넣고 더블클릭해도 됩니다.
    - 폴더에 이미지가 여러 개 있으면 경로를 물어봅니다. 파일을 창에 끌어다 놓고 Enter를 누르세요.
@@ -63,20 +64,20 @@ powershell -ExecutionPolicy Bypass -File patch.ps1 "원본.iso" "결과.wbfs"
 | RVZ는 지원하지 않습니다 | Dolphin 게임 목록에서 우클릭 → 파일 변환 → ISO로 바꾼 뒤 다시 실행하세요. |
 | wit.exe 실행 실패 | 빈 공간(약 10GB)이 모자라거나 원본 파일이 손상됐습니다. |
 
-패처는 이미지를 풀어 바뀐 게임 파일 323개에만 파일별 차분을 적용하고 다시 묶습니다. 파일마다 적용 전후 MD5를 검사하므로 원본이 맞지 않으면 멈추고 알려 줍니다.
+패처는 이미지를 풀어 바뀐 게임 파일 324개에만 파일별 차분을 적용하고 다시 묶습니다. 파일마다 적용 전후 MD5를 검사하므로 원본이 맞지 않으면 멈추고 알려 줍니다.
 결과 이미지의 MD5는 원본 덤프에 따라 달라질 수 있지만 게임 내용은 같습니다.
 
 자세한 방법은 [`README_한국어.txt`](release/README_한국어.txt)를 참고하세요.
 
 ### 실행 환경
 
-- **확인함**: Dolphin.
+- **확인함**: Dolphin, Wii U(vWii) + USB Loader GX.
 
 ### 알려진 문제
 
 - 홈 버튼 메뉴의 안내 문장(Wii 메뉴로 돌아갈지 묻는 문장 등)과 Wii 메뉴에 표시되는 게임 이름은 Wii 본체의 시스템 폰트로 그려져 일본어 그대로 두었습니다. 홈 버튼 메뉴의 버튼 그림은 한글화했습니다.
 - 게임 화면의 조작 표시(HUD)와 결과 화면 문구는 일본판 원본부터 영문 디자인이라 그대로 두었습니다.
-- 컷신 영상 안에 그려진 영어 지명 글씨는 영상의 일부라 바꾸지 않았습니다. 자막은 모두 한글로 나옵니다.
+- 영상 안에 디자인으로 들어간 영어 글씨(컷신의 지명, 오프닝의 영어 문구와 로고)는 바꾸지 않았습니다. 자막은 모두 한글로 나옵니다.
 - 그림 글씨는 16:9(와이드) 화면 기준으로 그렸습니다. 4:3 화면으로 설정하면 그림 속 글자가 조금 좁아 보입니다.
 - 세이브 파일 제목·설명(Wii 데이터 관리 화면)도 본체 시스템 폰트로 그려져 일본어 그대로 두었습니다.
 - 스페셜 메뉴의 설정 자료 원화에 적힌 손글씨 메모는 원화 그대로 두었습니다.
@@ -86,7 +87,9 @@ powershell -ExecutionPolicy Bypass -File patch.ps1 "원본.iso" "결과.wbfs"
 
 ### 요구 사항
 
-- Python 3.11 이상. `pip install -r requirements.txt`로 numpy, Pillow를 설치합니다. 이미지 압축(DXT1)에 Pillow 11.2 이상이 필요합니다.
+- Python 3.11 이상. `pip install -r requirements.txt`로 numpy, Pillow, opencv-python, imageio-ffmpeg를 설치합니다. 이미지 압축(DXT1)에 Pillow 11.2 이상이 필요합니다.
+- 오프닝 영상 자막 지우기에 [LaMa](https://github.com/advimman/lama) 모델(`big-lama.pt`, TorchScript)과 PyTorch를 씁니다. `%LOCALAPPDATA%\lama\`에 `big-lama.pt`와 `lama_inpaint.py`(`inpaint(rgb, mask)`)를 둡니다. 한 번 만든 영상은 `work/cache/opening/`에 남아 다시 쓰므로, 캐시가 있으면 필요 없습니다.
+- 에스코어 드림 6(`SCDream6.otf`). 오프닝 한글 자막에 씁니다. 라이선스상 저장소에 넣지 않았으니 `tools/fonts/`에 두거나 PC에 설치합니다.
 - 일본판 ISO. 저장소 루트나 `iso/`에 두거나 환경 변수 `DISASTER_JP_ISO`로 지정합니다.
 - 맑은 고딕(`C:/Windows/Fonts/malgun.ttf`). 한글 글자를 그리는 데 씁니다.
 - [wit](https://wit.wiimm.de/)(Wiimms ISO Tools, cygwin64 판)와 xdelta3. `tools/bin/wit-v3.05a-r8638-cygwin64/`, `tools/bin/xdelta3.exe`에 둡니다. 시험용 ISO만 만들 때는 PATH나 환경 변수 `WIT`, `XDELTA3`로 지정해도 됩니다. 배포용 패처는 이 파일들을 함께 묶으므로 `tools/bin/`에 있어야 합니다.
@@ -94,15 +97,15 @@ powershell -ExecutionPolicy Bypass -File patch.ps1 "원본.iso" "결과.wbfs"
 ### 빌드
 
 ```bash
-# 배포용 패처: 빌드한 뒤 파일별 차분을 만들어 release/RDZJ_KPatch_v0.3/ 과 .zip 으로 묶음
-python tools/make_patcher.py 0.3
+# 배포용 패처: 빌드한 뒤 파일별 차분을 만들어 release/RDZJ_KPatch_v0.4/ 과 .zip 으로 묶음
+python tools/make_patcher.py 0.4
 
 # 시험용 한글 ISO만 빨리 만들기 (work/Disaster_KO.iso)
 python tools/build.py
 python tools/inplace.py
 ```
 
-처음 실행하면 일본판 ISO의 데이터 파티션을 `work/extract`에 추출합니다. `build.py`는 번역을 검사한 뒤 바뀐 파일 323개를 `work/out`에 만듭니다(처음에는 그림 인코딩 때문에 15분 안팎 걸리고, 이후에는 `work/cache`에 둔 결과를 다시 써서 바뀐 그림만 인코딩합니다). `make_patcher.py`는 이 파일들의 차분과 `patcher/`의 사용자용 스크립트를 묶고, `inplace.py`는 원본 ISO의 배치를 그대로 두고 이 파일들만 교체한 시험용 ISO를 만듭니다.
+처음 실행하면 일본판 ISO의 데이터 파티션을 `work/extract`에 추출합니다. `build.py`는 번역을 검사한 뒤 바뀐 파일 324개를 `work/out`에 만듭니다(처음에는 그림 인코딩과 오프닝 영상 작업 때문에 20분 안팎 걸리고, 이후에는 `work/cache`에 둔 결과를 다시 써서 바뀐 그림·영상만 다시 만듭니다). `make_patcher.py`는 이 파일들의 차분과 `patcher/`의 사용자용 스크립트를 묶고, `inplace.py`는 원본 ISO의 배치를 그대로 두고 이 파일들만 교체한 시험용 ISO를 만듭니다.
 같은 입력이면 결과는 바이트 단위로 같습니다. Windows Git Bash에서는 `PYTHONIOENCODING=utf-8`을 붙이세요.
 
 ### 번역 수정
@@ -113,6 +116,7 @@ python tools/inplace.py
 - 원문 대조: `python tools/export_text.py`를 실행하면 일본어 원문과 번역을 나란히 담은 `work/디재스터_텍스트.json`이 만들어집니다. 이 파일의 `번역`을 고친 뒤 `python tools/ko_import.py work/디재스터_텍스트.json`으로 되돌려 넣을 수 있습니다.
 - 검사: 빌드할 때 태그(`<n>`, `<w=숫자>`, `<p>` 등)가 원문과 다르거나 가나가 남아 있으면 빌드를 멈춥니다.
 - 그림 글씨: [`tools/assets/`](tools/assets)의 PNG를 원본과 같은 크기로 고친 뒤 빌드합니다. 들어갈 위치는 [`tools/data/textures.json`](tools/data/textures.json)에 있습니다.
+- 오프닝 영상 자막: [`translation/opening.json`](translation/opening.json)에 줄마다 시작·끝 프레임, 원문, 한국어, 지우는 방법이 있습니다.
 
 `translation/ko.json`에는 **번역문만** 들어 있습니다(원문 단위 번호, 분류, 화자, 위치, 한국어).
 일본어 원문은 게임 데이터라 넣지 않았으며, 빌드할 때 게임에서 직접 추출해 번호를 맞춥니다.
@@ -125,9 +129,11 @@ tools/             빌드·패처·원문 추출 도구 (paths.py가 기준 경�
   assets/          한글화 이미지 209장
   data/            이미지가 들어갈 파일과 위치
   bin/             (git 제외) wit, xdelta3
+  fonts/           (git 제외) 오프닝 자막 글꼴
 translation/
   ko.json          번역 JSON
   dol.json         실행 파일 문구(위치, 한국어)
+  opening.json     오프닝 영상 자막(프레임, 한국어)
 docs/
   TECHNICAL.md     파일 포맷과 한글화 방식
   releases/        릴리즈 노트 사본
@@ -147,6 +153,7 @@ work/              (git 제외) 추출본, 빌드 결과, 원문
 
 - 이 저장소의 도구 코드, 한국어 번역문, 문서: [MIT License](LICENSE) (© 2026 arqhive).
 - 패처에 동봉하는 [wit](https://wit.wiimm.de/)은 GPL-2.0, [xdelta3](https://github.com/jmacd/xdelta)는 Apache-2.0입니다.
+- 오프닝 자막 글꼴: 에스코어 드림(S-Core). 자막 지우기: [LaMa](https://github.com/advimman/lama)(Apache-2.0), OpenCV.
 - `tools/inplace.py`, `tools/wiidisc.py`는 같은 제작자의 「죄와 벌 우주의 후계자」 한글 패치 도구를 바탕으로 했습니다.
 
 ## 면책
