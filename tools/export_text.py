@@ -15,7 +15,8 @@ def main():
         extract_text.main()
     master = {u['id']: u for u in json.load(open(paths.MASTER, encoding='utf-8'))}
     ko = json.load(open(paths.KO_JSON, encoding='utf-8'))
-    rows = [dict(id=u['id'], 분류=u['분류'], 화자=u['화자'], 위치=u['위치'], 원문=master[u['id']]['ja'], 번역=u['ko']) for u in ko]
+    rows = [dict(id=u['id'], 분류=u['분류'], 화자=u['화자'], 위치=u['위치'], 원문=master[u['id']]['ja'], 번역=u['ko'],
+                 **({'위치별': u['위치별']} if u.get('위치별') else {})) for u in ko]
     json.dump(rows, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(len(rows), '개 ->', paths.rel(OUT))
 

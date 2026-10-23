@@ -17,6 +17,10 @@ def main():
         if r is None:
             continue
         new = dict(u, 화자=r.get('화자', u['화자']), ko=r['번역'])
+        if r.get('위치별'):
+            new['위치별'] = r['위치별']
+        else:
+            new.pop('위치별', None)
         changed += new != u
         u.update(new)
     json.dump(ko, open(paths.KO_JSON, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

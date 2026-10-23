@@ -42,12 +42,18 @@ def load_translation():
         if not k.strip() or k == m['ja']:
             continue
         tags = lambda s: sorted(t for t in TAG.findall(s) if not (u['위치'] == 'file' and t == '<n>'))
-        if tags(k) != tags(m['ja']):   # 재난 파일 본문은 한글 폭에 맞춰 줄을 다시 나눠서 <n> 개수는 안 봄
-            errors.append(f"{u['id']}: 태그가 원문과 다름")
-        if re.search(r'[぀-ヿ]', TAG.sub('', k)):
-            errors.append(f"{u['id']}: 가나가 남아 있음")
+        # 같은 원문을 여러 장면에서 다른 사람이 말하면 '위치별'(ref -> 한국어)로 그 자리만 바꾼다
+        each = u.get('위치별', {})
+        for r in each:
+            if r not in m['refs']:
+                errors.append(f"{u['id']}: 위치별의 {r} 은 이 원문의 위치가 아님")
+        for s in [k] + list(each.values()):
+            if tags(s) != tags(m['ja']):   # 재난 파일 본문은 한글 폭에 맞춰 줄을 다시 나눠서 <n> 개수는 안 봄
+                errors.append(f"{u['id']}: 태그가 원문과 다름")
+            if re.search(r'[぀-ヿ]', TAG.sub('', s)):
+                errors.append(f"{u['id']}: 가나가 남아 있음")
         for r in m['refs']:
-            by_ref[r] = k
+            by_ref[r] = each.get(r, k)
             if 'menu.playRadio' in u['위치']:
                 RADIO_REFS.add(r)
     if errors:
