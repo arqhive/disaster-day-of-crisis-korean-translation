@@ -37,7 +37,8 @@ def load_translation():
         k = u['ko']
         if not k.strip() or k == m['ja']:
             continue
-        if sorted(TAG.findall(k)) != sorted(TAG.findall(m['ja'])):
+        tags = lambda s: sorted(t for t in TAG.findall(s) if not (u['위치'] == 'file' and t == '<n>'))
+        if tags(k) != tags(m['ja']):   # 재난 파일 본문은 한글 폭에 맞춰 줄을 다시 나눠서 <n> 개수는 안 봄
             errors.append(f"{u['id']}: 태그가 원문과 다름")
         if re.search(r'[぀-ヿ]', TAG.sub('', k)):
             errors.append(f"{u['id']}: 가나가 남아 있음")
