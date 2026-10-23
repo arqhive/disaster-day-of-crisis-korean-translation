@@ -24,7 +24,7 @@ def put(rel, data):
 
 
 RADIO_REFS = set()     # 라디오 창(menu.playRadio) 문자열 위치
-RADIO_LIMIT = 288      # 라디오 창 한 줄 폭(실기: 「자세한 정보는 아직 확인되지 않」까지)
+RADIO_LIMIT = 268      # 라디오 창 한 줄 폭(실기: 288 로 좁혔을 때 한 글자쯤 넘쳐서 한 글자 줄임)
 
 
 def load_translation():

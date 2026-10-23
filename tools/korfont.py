@@ -31,6 +31,7 @@ def is_hangul(c):
 
 
 NARROW = (19, 18, 17, 16, 15, 14)   # 좁은 한글 폭 단계
+NARROW_SPACE = 4                    # 좁힌 줄의 띄어쓰기 폭(원래 7)
 
 
 def render_narrow(ch, adv):
@@ -58,14 +59,17 @@ class Mapper:
         self.free = list(free_codes)
         self.map = {}
         self.narrow = {}                     # (한글, 폭) -> 코드
+        self.space = None                    # 좁은 띄어쓰기 코드
         self.widths = {c: w for c, w, p in fontobj.ents}
 
-    def width(self, text, adv=ADV):
-        """태그를 뺀 글자 폭 합 (한글은 adv)"""
+    def width(self, text, adv=ADV, space=None):
+        """태그를 뺀 글자 폭 합 (한글은 adv, 띄어쓰기는 space 를 주면 그 폭)"""
         w = 0
         for c in re.sub(r'<[^>]*>', '', text):
             if is_hangul(c):
                 w += adv
+            elif c == ' ' and space is not None:
+                w += space
             elif c in CUSTOM:
                 w += CUSTOM[c]
             else:
@@ -73,14 +77,14 @@ class Mapper:
         return w
 
     def encode_fit(self, text, limit):
-        """줄(<n>·<p>·<LINE> 사이)마다 폭이 limit 를 넘으면 그 줄의 한글만 좁은 글자로 바꿔 넣는다.
+        """줄(<n>·<p>·<LINE> 사이)마다 폭이 limit 를 넘으면 그 줄의 한글은 좁은 글자, 띄어쓰기는 좁은 띄어쓰기로 바꿔 넣는다.
         넘치는 줄이 없으면 None. 좁은 글자 자리는 기존 배정이 끝난 뒤 남는 자리에서 새로 잡는다."""
         out, changed = [], False
         for seg in re.split(r'(<n>|<p>|<LINE>)', text):
             if seg in ('<n>', '<p>', '<LINE>') or self.width(seg) <= limit:
                 out.append(self.encode(seg))
                 continue
-            adv = next((a for a in NARROW if self.width(seg, a) <= limit), NARROW[-1])
+            adv = next((a for a in NARROW if self.width(seg, a, NARROW_SPACE) <= limit), NARROW[-1])
             changed = True
             b = bytearray()
             for part in re.split(r'(<[^>]*>)', seg):
@@ -88,7 +92,11 @@ class Mapper:
                     b += part.encode('ascii')
                     continue
                 for c in part:
-                    if is_hangul(c):
+                    if c == ' ':
+                        if self.space is None:
+                            self.space = self.free.pop()
+                        b += self.space
+                    elif is_hangul(c):
                         if (c, adv) not in self.narrow:
                             self.narrow[(c, adv)] = self.free.pop()
                         b += self.narrow[(c, adv)]
@@ -126,6 +134,11 @@ class Mapper:
                 idx = fo.index[code]
                 fo.put(idx, g)
                 fo.setwidth(idx, CUSTOM.get(ch, ADV))
+        if self.space is not None:
+            for fo in fonts:
+                idx = fo.index[self.space]
+                fo.put(idx, Image.new('L', (dfont.CW, dfont.CH)))
+                fo.setwidth(idx, NARROW_SPACE)
         for (ch, adv), code in self.narrow.items():
             g = render_narrow(ch, adv)
             for fo in fonts:
