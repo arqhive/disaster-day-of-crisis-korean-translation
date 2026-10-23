@@ -44,6 +44,7 @@ def render_narrow(ch, adv):
     ink = g.crop((box[0], 0, box[2], g.size[1]))
     nw = max(1, round(ink.size[0] * adv / ADV))
     lo, hi = (dfont.CW - adv) / 2, (dfont.CW + adv) / 2
+    nw = min(nw, math.floor(hi) - math.ceil(lo))   # 홀수 폭은 들어갈 자리가 1px 모자랄 수 있음
     x = round(dfont.CW / 2 + ((box[0] + box[2]) / 2 - dfont.CW / 2) * adv / ADV - nw / 2)
     x = max(math.ceil(lo), min(x, math.floor(hi) - nw))   # 반 픽셀 경계는 안쪽으로
     out = Image.new('L', g.size)
