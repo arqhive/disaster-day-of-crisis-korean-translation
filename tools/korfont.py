@@ -23,25 +23,6 @@ def render(ch, size=SIZE):
     return im.point(lambda v: 0 if v < 20 else v)
 
 
-# 원본 일본어 폰트는 괄호·따옴표 잉크가 칸 한쪽에 몰려 있어(일본어 조판용) 한글 사이에서는 한쪽이 비어 보인다.
-# 잉크를 한글과 같은 시작점 x=3 으로 옮기고 폭을 잉크 폭 + 4 로 줄인다(앞뒤 간격을 한글끼리 간격과 맞춤).
-TIGHT_OPEN = '「」『』（）“”【】'
-
-
-def tighten_open(fontobj, chars=TIGHT_OPEN):
-    from PIL import Image
-    for ch in chars:
-        i = fontobj.index[ch.encode('cp932')]
-        im = fontobj.get(i)
-        box = im.point(lambda v: 255 if v > 40 else 0).getbbox()
-        if box is None or (box[0] == 3 and fontobj.d[fontobj.ents[i][2]] == box[2] - box[0] + 4):
-            continue                      # 이미 맞췄거나 빈 글자
-        out = Image.new('L', im.size)
-        out.paste(im.crop((box[0], 0, box[2], im.size[1])), (3, 0))
-        fontobj.put(i, out)
-        fontobj.setwidth(i, (box[2] - box[0]) + 4)
-
-
 def is_hangul(c):
     return '\uac00' <= c <= '\ud7a3'
 
