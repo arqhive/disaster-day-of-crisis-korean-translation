@@ -2091,5 +2091,95 @@
   "refs": [
    "common/hb/homebutton2_JPN.bin@693e0#0"
   ]
+ },
+ {
+  "name": "mission01",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission01.tpl@0#0"
+  ]
+ },
+ {
+  "name": "mission02",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission02.tpl@0#0"
+  ]
+ },
+ {
+  "name": "mission03",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission03.tpl@0#0"
+  ]
+ },
+ {
+  "name": "mission04",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission04.tpl@0#0"
+  ]
+ },
+ {
+  "name": "mission05",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission05.tpl@0#0"
+  ]
+ },
+ {
+  "name": "mission06",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission06.tpl@0#0"
+  ]
+ },
+ {
+  "name": "mission07",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission07.tpl@0#0"
+  ]
+ },
+ {
+  "name": "mission08",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission08.tpl@0#0"
+  ]
+ },
+ {
+  "name": "mission09",
+  "group": "사격장",
+  "fmt": "CMPR",
+  "w": 640,
+  "h": 448,
+  "refs": [
+   "tpl/mission09.tpl@0#0"
+  ]
  }
 ]
