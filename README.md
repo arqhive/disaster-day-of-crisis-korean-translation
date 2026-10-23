@@ -114,6 +114,7 @@ python tools/inplace.py
 - 실행 파일 문구: [`translation/dol.json`](translation/dol.json)에 `main.dol` 안 위치와 한국어가 있습니다. 원래 자리에 덮어쓰므로 원문보다 길게 쓸 수 없습니다(한글 한 자 2바이트, 빈칸·마침표 1바이트).
 - 그림 재작업: `python tools/gpt_prepare.py`로 `work/GPT/`에 원본·현재 한글판·요청서를 만들고, GPT 결과를 `work/GPT/결과/`에 넣은 뒤 `python tools/gpt_import.py`로 반영합니다.
 - 원문 대조: `python tools/export_text.py`를 실행하면 일본어 원문과 번역을 나란히 담은 `work/디재스터_텍스트.json`이 만들어집니다. 이 파일의 `번역`을 고친 뒤 `python tools/ko_import.py work/디재스터_텍스트.json`으로 되돌려 넣을 수 있습니다.
+- 영어판 대조: 유럽판(RDZP01) DATA 파티션을 `work/extract_eu`에 푼 뒤 `python tools/align_en.py`를 실행하면, 원문·유럽판 영어·번역을 나란히 담은 `work/디재스터_대조_영어.json`이 만들어집니다. 스크립트 대사는 음성 ID나 호출 순서로, 컷신 자막은 가까운 프레임으로 맞춥니다.
 - 검사: 빌드할 때 태그(`<n>`, `<w=숫자>`, `<p>` 등)가 원문과 다르거나 가나가 남아 있으면 빌드를 멈춥니다.
 - 그림 글씨: [`tools/assets/`](tools/assets)의 PNG를 원본과 같은 크기로 고친 뒤 빌드합니다. 들어갈 위치는 [`tools/data/textures.json`](tools/data/textures.json)에 있습니다.
 - 오프닝 영상 자막: [`translation/opening.json`](translation/opening.json)에 줄마다 시작·끝 프레임, 원문, 한국어, 지우는 방법이 있습니다.
