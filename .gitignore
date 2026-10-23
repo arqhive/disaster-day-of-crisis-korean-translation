@@ -14,5 +14,8 @@ release/RDZJ_KPatch_v*/
 # 외부 실행 파일(wit·xdelta3) — README의 요구 사항 참고
 tools/bin/
 
+# 그림·영상용 글꼴(라이선스상 저장소에 넣지 않음, PC 설치본 복사)
+tools/fonts/
+
 __pycache__/
 *.pyc

@@ -178,6 +178,8 @@ def main():
     os.makedirs(paths.OUT)
     build_text(load_translation())
     build_images()
+    import opening_video
+    opening_video.main()   # 오프닝 영상 박힌 자막 → 한글 (캐시)
     # 원본과 같은 파일은 지운다 (바뀐 파일만 남김)
     n = 0
     for root, _, fs in os.walk(paths.OUT_FILES):
