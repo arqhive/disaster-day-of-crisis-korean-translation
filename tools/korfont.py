@@ -1,4 +1,7 @@
 """Render Hangul glyphs into Disaster font cells (24x28, I4, white on black, ink ~rows 3-21)."""
+import math
+import re
+
 from PIL import Image, ImageDraw, ImageFont
 import dfont
 
@@ -27,6 +30,26 @@ def is_hangul(c):
     return '\uac00' <= c <= '\ud7a3'
 
 
+NARROW = (19, 18, 17, 16, 15, 14)   # 좁은 한글 폭 단계
+
+
+def render_narrow(ch, adv):
+    """가로로 좁힌 한글. 게임은 24px 칸의 가운데에서 폭(adv)만큼만 그리므로
+    잉크를 칸 가운데 기준으로 adv/20 배 좁혀 그 영역 안에 넣는다."""
+    g = render(ch)
+    box = g.getbbox()
+    if box is None:
+        return g
+    ink = g.crop((box[0], 0, box[2], g.size[1]))
+    nw = max(1, round(ink.size[0] * adv / ADV))
+    lo, hi = (dfont.CW - adv) / 2, (dfont.CW + adv) / 2
+    x = round(dfont.CW / 2 + ((box[0] + box[2]) / 2 - dfont.CW / 2) * adv / ADV - nw / 2)
+    x = max(math.ceil(lo), min(x, math.floor(hi) - nw))   # 반 픽셀 경계는 안쪽으로
+    out = Image.new('L', g.size)
+    out.paste(ink.resize((nw, g.size[1]), Image.LANCZOS), (x, 0))
+    return out
+
+
 class Mapper:
     """Assign Hangul syllables to unused kanji codes."""
 
@@ -34,6 +57,45 @@ class Mapper:
         self.f = fontobj
         self.free = list(free_codes)
         self.map = {}
+        self.narrow = {}                     # (한글, 폭) -> 코드
+        self.widths = {c: w for c, w, p in fontobj.ents}
+
+    def width(self, text, adv=ADV):
+        """태그를 뺀 글자 폭 합 (한글은 adv)"""
+        w = 0
+        for c in re.sub(r'<[^>]*>', '', text):
+            if is_hangul(c):
+                w += adv
+            elif c in CUSTOM:
+                w += CUSTOM[c]
+            else:
+                w += self.widths.get(c.encode('cp932'), 0)
+        return w
+
+    def encode_fit(self, text, limit):
+        """줄(<n>·<p>·<LINE> 사이)마다 폭이 limit 를 넘으면 그 줄의 한글만 좁은 글자로 바꿔 넣는다.
+        넘치는 줄이 없으면 None. 좁은 글자 자리는 기존 배정이 끝난 뒤 남는 자리에서 새로 잡는다."""
+        out, changed = [], False
+        for seg in re.split(r'(<n>|<p>|<LINE>)', text):
+            if seg in ('<n>', '<p>', '<LINE>') or self.width(seg) <= limit:
+                out.append(self.encode(seg))
+                continue
+            adv = next((a for a in NARROW if self.width(seg, a) <= limit), NARROW[-1])
+            changed = True
+            b = bytearray()
+            for part in re.split(r'(<[^>]*>)', seg):
+                if part.startswith('<'):
+                    b += part.encode('ascii')
+                    continue
+                for c in part:
+                    if is_hangul(c):
+                        if (c, adv) not in self.narrow:
+                            self.narrow[(c, adv)] = self.free.pop()
+                        b += self.narrow[(c, adv)]
+                    else:
+                        b += self.encode(c)
+            out.append(bytes(b))
+        return b''.join(out) if changed else None
 
     def code(self, ch):
         if ch not in self.map:
@@ -64,3 +126,9 @@ class Mapper:
                 idx = fo.index[code]
                 fo.put(idx, g)
                 fo.setwidth(idx, CUSTOM.get(ch, ADV))
+        for (ch, adv), code in self.narrow.items():
+            g = render_narrow(ch, adv)
+            for fo in fonts:
+                idx = fo.index[code]
+                fo.put(idx, g)
+                fo.setwidth(idx, adv)

@@ -23,6 +23,10 @@ def put(rel, data):
     open(p, 'wb').write(data)
 
 
+RADIO_REFS = set()     # 라디오 창(menu.playRadio) 문자열 위치
+RADIO_LIMIT = 288      # 라디오 창 한 줄 폭(실기: 「자세한 정보는 아직 확인되지 않」까지)
+
+
 def load_translation():
     """ref(게임 안 위치) -> 한국어. 원문 단위 id 로 master 와 잇는다."""
     if not os.path.exists(paths.MASTER):
@@ -44,6 +48,8 @@ def load_translation():
             errors.append(f"{u['id']}: 가나가 남아 있음")
         for r in m['refs']:
             by_ref[r] = k
+            if 'menu.playRadio' in u['위치']:
+                RADIO_REFS.add(r)
     if errors:
         raise SystemExit('번역 검사 실패:\n  ' + '\n  '.join(errors[:30]))
     return by_ref
@@ -62,7 +68,7 @@ def sjis_codes(b):
 
 def build_text(by_ref):
     fonts = {n: dfont.Font(src(n)) for n in FONTS}
-    pending, kept = [], []   # (setter, 한국어), 그대로 남는 원문
+    pending, kept, radio = [], [], []   # (setter, 한국어), 그대로 남는 원문
 
     head, secs, tail = bdat.load(src('common/jp/bdat.bin'))
     tables = [bdat.Table(s) for s in secs]
@@ -96,6 +102,8 @@ def build_text(by_ref):
                 kept.append(s)
             else:
                 pending.append((lambda v, sb=sbs[n], j=j: sb.strs.__setitem__(j, v), k))
+                if f'sb:{n}:{j}' in RADIO_REFS:
+                    radio.append((pending[-1][0], k))
     # 실행 파일(main.dol) 문구: 원래 자리(다음 문자열 앞 0 까지)에 덮어쓴다
     dol = bytearray(open(os.path.join(paths.EXTRACT, 'sys', 'main.dol'), 'rb').read())
     for e in json.load(open(paths.DOL_KO, encoding='utf-8')):
@@ -123,6 +131,13 @@ def build_text(by_ref):
     m = korfont.Mapper(fonts['font.bin'], free)
     for setter, k in pending:
         setter(m.encode(k))
+    # 라디오 창(menu.playRadio)은 한 줄 폭 288 까지. 넘치는 줄만 좁은 한글로 다시 넣는다(기존 배정 뒤에 잡아서 다른 글자 배정은 그대로)
+    narrow_lines = 0
+    for setter, k in radio:
+        v = m.encode_fit(k, RADIO_LIMIT)
+        if v is not None:
+            setter(v)
+            narrow_lines += 1
 
     secs = [t.build() for t in tables]
     for d in ('common/jp', 'mov/jp'):
@@ -137,7 +152,7 @@ def build_text(by_ref):
     m.apply(fonts.values())
     for n, fo in fonts.items():
         put(n, bytes(fo.d))
-    print(f'텍스트: 문자열 {len(pending)}곳, 한글 {len(m.map)}자 (남은 한자 자리 {len(m.free)})')
+    print(f'텍스트: 문자열 {len(pending)}곳, 한글 {len(m.map)}자, 라디오 좁은 한글 {len(m.narrow)}칸({narrow_lines}곳) (남은 한자 자리 {len(m.free)})')
 
 
 def build_images():
