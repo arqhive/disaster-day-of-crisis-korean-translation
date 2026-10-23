@@ -135,6 +135,8 @@ def build_text(by_ref):
     os.makedirs(os.path.dirname(paths.OUT_DOL), exist_ok=True)
     open(paths.OUT_DOL, 'wb').write(bytes(dol))
     m.apply(fonts.values())
+    for fo in fonts.values():
+        korfont.tighten_open(fo)
     for n, fo in fonts.items():
         put(n, bytes(fo.d))
     print(f'텍스트: 문자열 {len(pending)}곳, 한글 {len(m.map)}자 (남은 한자 자리 {len(m.free)})')
