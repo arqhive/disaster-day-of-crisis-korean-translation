@@ -9,7 +9,7 @@ def main():
     sys.stdout.reconfigure(encoding='utf-8')
     if len(sys.argv) < 2:
         raise SystemExit('사용법: python tools/ko_import.py <검수 JSON>')
-    rows = {u['id']: u for u in json.load(open(sys.argv[1], encoding='utf-8'))}
+    rows = {u['id']: u for u in json.load(open(sys.argv[1], encoding='utf-8')) if 'id' in u}   # 구분선 항목은 건너뜀
     ko = json.load(open(paths.KO_JSON, encoding='utf-8'))
     changed = 0
     for u in ko:
@@ -22,8 +22,9 @@ def main():
         else:
             new.pop('위치별', None)
         changed += new != u
+        u.clear()
         u.update(new)
-    json.dump(ko, open(paths.KO_JSON, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    json.dump(ko, open(paths.KO_JSON, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=1)
     print(f'{changed}개 바뀜 -> {paths.rel(paths.KO_JSON)}')
 
 
