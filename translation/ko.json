@@ -22254,84 +22254,84 @@
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 rescue03 menu.caption",
-  "ko": "<c=npc>아… 이런 상황인데<n>배가 고파서 못 움직이겠어…<kw>"
+  "ko": "<c=npc>아… 이런 상황인데<n>배가 고파서 못 움직이겠어요…<kw>"
  },
  {
   "id": "T03356",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 rescue03 menu.caption",
-  "ko": "<c=npc>친구와도 헤어졌고…<n>나 여기서 죽는 걸까…<kw>"
+  "ko": "<c=npc>친구와도 헤어졌고…<n>저 여기서 죽는 걸까요…<kw>"
  },
  {
   "id": "T03357",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 rescue03_00 menu.caption",
-  "ko": "<c=npc>아, 고마워…!<kw><p><c=npc>…일단 배는 채웠네<kw>"
+  "ko": "<c=npc>아, 고마워요…!<kw><p><c=npc>…일단 배는 채웠네요<kw>"
  },
  {
   "id": "T03358",
   "분류": "기타",
   "화자": "NPC",
   "위치": "blu08_00 event",
-  "ko": "<c=npc>그런데 아직 힘이 안 나…<kw><p><c=npc>친구가 있는 곳까지<n>걸어갈 수 있을지…<kw>"
+  "ko": "<c=npc>그런데 아직 힘이 안 나요…<kw><p><c=npc>친구가 있는 곳까지<n>걸어갈 수 있을지…<kw>"
  },
  {
   "id": "T03359",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 BAD_ANSWER menu.caption",
-  "ko": "<c=npc>아, 고맙지만…<kw><p><c=npc>반창고로는<n>배를 채울 수 없어<kw>"
+  "ko": "<c=npc>아, 고맙지만…<kw><p><c=npc>반창고로는<n>배를 채울 수 없어요<kw>"
  },
  {
   "id": "T03360",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 BAD_ANSWER menu.caption",
-  "ko": "<c=npc>미안해<n>의료 키트는 먹을 수 없잖아<kw>"
+  "ko": "<c=npc>미안해요<n>의료 키트는 먹을 수 없잖아요<kw>"
  },
  {
   "id": "T03361",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 BAD_ANSWER menu.caption",
-  "ko": "<c=npc>미안하지만…<n>먼저 먹을 게 필요해<kw>"
+  "ko": "<c=npc>미안하지만…<n>먼저 먹을 게 필요해요<kw>"
  },
  {
   "id": "T03362",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 BAD_ANSWER menu.caption",
-  "ko": "<c=npc>아, 배고파…<kw>"
+  "ko": "<c=npc>아, 배고파요…<kw>"
  },
  {
   "id": "T03363",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 BAD_ANSWER menu.caption",
-  "ko": "<c=npc>친구가 있는 곳까지<n>체력이 버틸까…<kw>"
+  "ko": "<c=npc>친구가 있는 곳까지<n>체력이 버틸까요…<kw>"
  },
  {
   "id": "T03364",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 BAD_ANSWER2 menu.caption",
-  "ko": "<c=npc>아니, 다친 건 아니야<kw>"
+  "ko": "<c=npc>아뇨, 다친 건 아니에요<kw>"
  },
  {
   "id": "T03365",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 BAD_ANSWER2 menu.caption",
-  "ko": "<c=npc>고마워<n>하지만 이제 배불러<kw>"
+  "ko": "<c=npc>고마워요<n>하지만 이제 배불러요<kw>"
  },
  {
   "id": "T03366",
   "분류": "대사",
   "화자": "NPC",
   "위치": "blu08_00 BAD_ANSWER2 menu.caption",
-  "ko": "<c=npc>괜찮아<n>다치진 않았으니까…<kw>"
+  "ko": "<c=npc>괜찮아요<n>다치진 않았으니까요…<kw>"
  },
  {
   "id": "T03367",
