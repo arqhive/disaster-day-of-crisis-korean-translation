@@ -75,39 +75,47 @@ def cap_map(name):
     return out
 
 
-def main():
-    sys.stdout.reconfigure(encoding='utf-8')
-    master = {u['id']: u for u in json.load(open(paths.MASTER, encoding='utf-8'))}
-    ko = json.load(open(paths.KO_JSON, encoding='utf-8'))
+def english_lookup():
+    """ref -> 유럽판 영어 (없으면 None). 유럽판 추출본(work/extract_eu)이 없으면 늘 None"""
+    if not os.path.exists(os.path.join(EU, 'common', 'en', 'bdat.bin')):
+        return lambda ref: None
     h1, s1, _ = bdat.load(os.path.join(paths.SRC, 'common', 'jp', 'bdat.bin'))
     h2, s2, _ = bdat.load(os.path.join(EU, 'common', 'en', 'bdat.bin'))
     t_en = {t.name: t for t in (bdat.Table(s) for s in s2)}
     t_jp = {t.name: t for t in (bdat.Table(s) for s in s1)}
     sbs, caps = {}, {}
+
+    def look(ref):
+        kind, rest = ref.split(':', 1)
+        if kind == 'sb':
+            n, j = rest.rsplit(':', 1)
+            if n not in sbs:
+                sbs[n] = sb_map(n)
+            return sbs[n].get(int(j))
+        if kind == 'cap':
+            n, i = rest.rsplit(':', 1)
+            if n not in caps:
+                caps[n] = cap_map(n)
+            return caps[n].get(int(i))
+        if kind == 'bdat':
+            tn, row, col = rest.split(':')
+            a, b = t_jp.get(tn), t_en.get(tn)
+            if a and b and len(b.rows) >= len(a.rows):
+                v = list(b.rows[int(row)].values())[int(col)]
+                return (en(v) if isinstance(v, bytes) else str(v), 'bdat')
+        return None
+    return look
+
+
+def main():
+    sys.stdout.reconfigure(encoding='utf-8')
+    master = {u['id']: u for u in json.load(open(paths.MASTER, encoding='utf-8'))}
+    ko = json.load(open(paths.KO_JSON, encoding='utf-8'))
+    look = english_lookup()
     rows, stat = [], collections.Counter()
     for u in ko:
         m = master[u['id']]
-        got = None
-        for r in m['refs']:
-            kind, rest = r.split(':', 1)
-            if kind == 'sb':
-                n, j = rest.rsplit(':', 1)
-                if n not in sbs:
-                    sbs[n] = sb_map(n)
-                got = sbs[n].get(int(j))
-            elif kind == 'cap':
-                n, i = rest.rsplit(':', 1)
-                if n not in caps:
-                    caps[n] = cap_map(n)
-                got = caps[n].get(int(i))
-            elif kind == 'bdat':
-                tn, row, col = rest.split(':')
-                a, b = t_jp.get(tn), t_en.get(tn)
-                if a and b and len(b.rows) >= len(a.rows):
-                    v = list(b.rows[int(row)].values())[int(col)]
-                    got = (en(v) if isinstance(v, bytes) else str(v), 'bdat')
-            if got:
-                break
+        got = next((g for g in map(look, m['refs']) if g), None)
         stat[got[1].split('+')[0].split('-')[0] if got else '없음'] += 1
         rows.append(dict(id=u['id'], 분류=u['분류'], 화자=u['화자'], 위치=u['위치'], 원문=m['ja'], 영어=got[0] if got else '',
                          번역=u['ko'], 맞춘방법=got[1] if got else ''))
