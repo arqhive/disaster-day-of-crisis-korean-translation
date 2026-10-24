@@ -3,11 +3,11 @@
 *Disaster: Day of Crisis* (Wii, 일본판 `RDZJ01`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
 
-**제작: arqhive** · **최신 버전: [v0.4.2](../../releases/tag/v0.4.2)**
+**제작: arqhive** · **최신 버전: [v0.5](../../releases/tag/v0.5)**
 
 - 대사 전체를 한글화했습니다(스테이지 대사, 무전·라디오 방송, 조작 안내, 컷신 자막 65편).
 - 메뉴와 게임 안 데이터를 한글화했습니다(타이틀·설정·일시정지 메뉴, 세이브 메시지, 재해 파일, 무기·아이템 설명, 칭호, 레스큐 목록, 구매 확인 메뉴, 디스크 오류 안내).
-- 글씨가 그려진 이미지 209장을 한글화했습니다(튜토리얼, 인물·장소 소개, 로딩 힌트, 스테이지 제목, 홈 버튼, 스트랩 경고). 16:9(와이드) 화면에서 글자 비율이 맞도록 그렸습니다.
+- 글씨가 그려진 이미지 218장을 한글화했습니다(튜토리얼, 인물·장소 소개, 로딩 힌트, 스테이지 제목, 사격장 미션 소개, 홈 버튼, 스트랩 경고). 16:9(와이드) 화면에서 글자 비율이 맞도록 그렸습니다.
 - 오프닝 영상에 들어간 일본어 자막 9줄을 지우고 한글 자막을 넣었습니다.
 - 게임 폰트의 한자 자리에 한글 957자를 새로 그려 넣었습니다.
 - **바뀐 게임 파일에만 차분을 적용하는 패처로 배포합니다. ISO, WBFS 등 덤프 형태와 상관없이 적용됩니다.**
@@ -38,7 +38,7 @@
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `RDZJ_KPatch_v0.4.2.zip`을 받아 압축을 풉니다.
+1. [배포 페이지](../../releases/latest)에서 `RDZJ_KPatch_v0.5.zip`을 받아 압축을 풉니다.
 2. 원본 이미지(ISO 또는 WBFS)를 `패치하기.bat` 위에 끌어다 놓습니다.
    - 원본을 `패치하기.bat`과 같은 폴더에 넣고 더블클릭해도 됩니다.
    - 폴더에 이미지가 여러 개 있으면 경로를 물어봅니다. 파일을 창에 끌어다 놓고 Enter를 누르세요.
@@ -97,8 +97,8 @@ powershell -ExecutionPolicy Bypass -File patch.ps1 "원본.iso" "결과.wbfs"
 ### 빌드
 
 ```bash
-# 배포용 패처: 빌드한 뒤 파일별 차분을 만들어 release/RDZJ_KPatch_v0.4.2/ 과 .zip 으로 묶음
-python tools/make_patcher.py 0.4.2
+# 배포용 패처: 빌드한 뒤 파일별 차분을 만들어 release/RDZJ_KPatch_v0.5/ 과 .zip 으로 묶음
+python tools/make_patcher.py 0.5
 
 # 시험용 한글 ISO만 빨리 만들기 (work/Disaster_KO.iso)
 python tools/build.py
@@ -110,7 +110,7 @@ python tools/inplace.py
 
 ### 번역 수정
 
-- 번역: [`translation/ko.json`](translation/ko.json)의 `ko` 값을 고친 뒤 빌드합니다. `id`는 원문 단위 번호이고, 같은 원문이 여러 곳에 쓰이면 한 번만 번역합니다. `분류`, `화자`, `위치`는 참고용입니다.
+- 번역: [`translation/ko.json`](translation/ko.json)의 `ko` 값을 고친 뒤 빌드합니다. `id`는 원문 단위 번호이고, 같은 원문이 여러 곳에 쓰이면 한 번만 번역합니다. 장면마다 말하는 사람이 달라 다르게 옮겨야 하면 `위치별`에 `{"cap:C0308:11": "고마워"}`처럼 그 자리만 따로 적습니다. `분류`, `화자`, `위치`는 참고용입니다.
 - 실행 파일 문구: [`translation/dol.json`](translation/dol.json)에 `main.dol` 안 위치와 한국어가 있습니다. 원래 자리에 덮어쓰므로 원문보다 길게 쓸 수 없습니다(한글 한 자 2바이트, 빈칸·마침표 1바이트).
 - 그림 재작업: `python tools/gpt_prepare.py`로 `work/GPT/`에 원본·현재 한글판·요청서를 만들고, GPT 결과를 `work/GPT/결과/`에 넣은 뒤 `python tools/gpt_import.py`로 반영합니다.
 - 원문 대조: `python tools/export_text.py`를 실행하면 일본어 원문과 번역을 나란히 담은 `work/디재스터_텍스트.json`이 만들어집니다. 이 파일의 `번역`을 고친 뒤 `python tools/ko_import.py work/디재스터_텍스트.json`으로 되돌려 넣을 수 있습니다.
@@ -127,7 +127,7 @@ python tools/inplace.py
 ```
 patcher/           사용자용 패처 (패치하기.bat, patch.ps1)
 tools/             빌드·패처·원문 추출 도구 (paths.py가 기준 경로를 잡음)
-  assets/          한글화 이미지 209장
+  assets/          한글화 이미지 218장
   data/            이미지가 들어갈 파일과 위치
   bin/             (git 제외) wit, xdelta3
   fonts/           (git 제외) 오프닝 자막 글꼴
