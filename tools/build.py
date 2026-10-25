@@ -4,7 +4,7 @@
 사용법: python tools/build.py"""
 import glob, json, os, re, shutil, sys, zlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-from PIL import Image
+from PIL import Image, ImageChops
 import paths
 import dfont, bdat, sbfile, capfile, korfont, gxtex, gxenc, extract_text
 
@@ -157,6 +157,16 @@ def build_text(by_ref):
     os.makedirs(os.path.dirname(paths.OUT_DOL), exist_ok=True)
     open(paths.OUT_DOL, 'wb').write(bytes(dol))
     m.apply(fonts.values())
+    # 컷신 자막 글꼴의 반각 , . ! 는 잉크가 칸 가운데에서 벗어나 있어서 게임이 폭만큼 가운데를 자를 때 잘린다(일본어는 전각만 써서 문제없음)
+    # , . 는 칸 가운데로 옮기고, 비스듬한 ! 와 그 옆에 붙는 ? 는 대사 글꼴 것으로 바꾼다(사용자 결정 10/26, 「!?」 위치를 맞춤)
+    cap, body = fonts['CapFont.bin'], fonts['font.bin']
+    for ch, dx in ((',', 2), ('.', -1)):
+        idx = cap.index[ch.encode('cp932')]
+        cap.put(idx, ImageChops.offset(cap.get(idx), dx, 0))
+    for ch in (b'!', b'?'):
+        j = body.index[ch]
+        cap.put(cap.index[ch], body.get(j))
+        cap.setwidth(cap.index[ch], body.ents[j][1])
     for n, fo in fonts.items():
         put(n, bytes(fo.d))
     print(f'텍스트: 문자열 {len(pending)}곳, 한글 {len(m.map)}자, 라디오 좁은 한글 {len(m.narrow)}칸({narrow_lines}곳) (남은 한자 자리 {len(m.free)})')
