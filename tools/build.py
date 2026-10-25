@@ -41,14 +41,15 @@ def load_translation():
         k = u['ko']
         if not k.strip() or k == m['ja']:
             continue
-        tags = lambda s: sorted(t for t in TAG.findall(s) if not (u['위치'] == 'file' and t == '<n>'))
+        # 줄 이음 <LINE> 은 빼도 됨(마침표로 끝난 자막, 사용자 결정 10/25) — 개수 비교에서 빼고 늘리는 것만 막는다
+        tags = lambda s: sorted(t for t in TAG.findall(s) if not (u['위치'] == 'file' and t == '<n>') and t != '<LINE>')
         # 같은 원문을 여러 장면에서 다른 사람이 말하면 '위치별'(ref -> 한국어)로 그 자리만 바꾼다
         each = u.get('위치별', {})
         for r in each:
             if r not in m['refs']:
                 errors.append(f"{u['id']}: 위치별의 {r} 은 이 원문의 위치가 아님")
         for s in [k] + list(each.values()):
-            if tags(s) != tags(m['ja']):   # 재난 파일 본문은 한글 폭에 맞춰 줄을 다시 나눠서 <n> 개수는 안 봄
+            if tags(s) != tags(m['ja']) or s.count('<LINE>') > m['ja'].count('<LINE>'):   # 재난 파일 본문은 한글 폭에 맞춰 줄을 다시 나눠서 <n> 개수는 안 봄
                 errors.append(f"{u['id']}: 태그가 원문과 다름")
             if re.search(r'[぀-ヿ]', TAG.sub('', s)):
                 errors.append(f"{u['id']}: 가나가 남아 있음")
